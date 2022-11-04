@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "baseUrl": ".",
+    "paths": {
+      "~/assets/*": [
+        "src/assets/*"
+      ],
+      "~/components/*": [
+        "src/Components/*"
+      ],
+      "~/configs/*": [
+        "src/configs/*"
+      ],
+      "~/contexts/*": [
+        "src/contexts/*"
+      ],
+      "~/layouts/*": [
+        "src/layouts/*"
+      ],
+      "~/services/*": [
+        "src/services/*"
+      ],
+      "~/styles/*": [
+        "src/styles/*"
+      ],
+    }
+  }
+}
