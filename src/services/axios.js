@@ -1,7 +1,7 @@
 import axios from "axios";
 import { parseCookies } from "nookies";
 import { toast } from "react-toastify";
-import { ServerURI } from "../configs";
+import { ServerURI } from "~/configs/server-config";
 
 export function getAPIClient(ctx) {
   const { "smc.tk": token } = parseCookies(ctx);

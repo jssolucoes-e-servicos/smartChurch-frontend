@@ -54,8 +54,7 @@ export const Bglogin = styled.img`
 export const ContainerData = styled.div`
   position: relative;
   top: 0;
-  background: #121214;
-  /* box-shadow: 0 11px 25px 36px rgb(0 0 0 / 10%); */
+  background: #12121;
   overflow: hidden;
   flex-shrink: 0;
   width: 100%;
@@ -63,7 +62,6 @@ export const ContainerData = styled.div`
   margin-left: 50px;
   flex-direction: column;
   height: auto;
-  //min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +75,6 @@ export const ContainerData = styled.div`
   form {
     width: 100%;
     height: 100%;
-    /* padding: 30px; */
   }
 `;
 // form color
@@ -90,9 +87,7 @@ export const DiColor = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: solid 0.5px #e91e63; */
-  background: linear-gradient(104.3deg, #ff008ecc 0.48%, #ffcd1e33);
-  // background: linear-gradient(180deg, #202024, 0, #121214 100%);
+
   border-radius: 10px;
   @media (max-width: 950px) {
     max-width: 100%;
@@ -107,7 +102,6 @@ export const DicGe = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  /* border: solid 0.5px #e91e63; */
   background: -webkit-gradient(
     linear,
     left top,
@@ -115,7 +109,6 @@ export const DicGe = styled.div`
     from(#202024),
     to(#161618)
   );
-  // background: linear-gradient(180deg, #202024, 0, #121214 100%);
   @media (max-width: 950px) {
     max-width: 100%;
   }
@@ -162,7 +155,7 @@ export const ButtonResgate = styled.button`
   max-width: 100%;
   height: 50px;
   line-height: 48px;
-  background: var(--bgColorAmarelo);
+  background: #0079ff;
   border: none;
   text-transform: uppercase;
   color: #121214;
@@ -176,7 +169,7 @@ export const ButtonResgate = styled.button`
   text-transform: uppercase;
   transition: all 0.3s ease;
   :hover {
-    background-color: #e7b400;
+    background-color: #3172bd;
   }
   @media (max-width: 950px) {
     width: 100%;
@@ -198,7 +191,7 @@ export const TxtL = styled.h2`
   line-height: 28px;
   letter-spacing: 0;
   text-align: left;
-  color: var(--bgColorAmarelo);
+  color: #0079ff;
   float: left;
 `;
 export const InputdIV = styled.div`

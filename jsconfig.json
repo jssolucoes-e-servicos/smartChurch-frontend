@@ -7,7 +7,7 @@
         "src/assets/*"
       ],
       "~/components/*": [
-        "src/Components/*"
+        "src/components/*"
       ],
       "~/configs/*": [
         "src/configs/*"
@@ -15,8 +15,14 @@
       "~/contexts/*": [
         "src/contexts/*"
       ],
-      "~/layouts/*": [
-        "src/layouts/*"
+      "~/core/*": [
+        "src/core/*"
+      ],
+      "~/templates/*": [
+        "src/templates/*"
+      ],
+      "~/partials/*": [
+        "src/partials/*"
       ],
       "~/services/*": [
         "src/services/*"

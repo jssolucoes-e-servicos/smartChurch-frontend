@@ -1,16 +1,16 @@
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
-import CardMaster from "src/Components/CardMaster";
+import CardMaster from "~/components/CardMaster";
 import {
-  CardImg, CardMaxIcons, Cardparagraph, CardTexts,
+  CardImg, CardMaxIcons, Cardparagraph, CardTexts, CadbtnlongV2,
   CardTtile
-} from "src/Components/CardMaster/styles";
-import AppLayout from "src/layouts/AppLayout";
-import api from "src/services/api";
+} from "~/components/CardMaster/styles";
+import AppLayout from "~/templates/AppLayout";
+import api from "~/services/api";
 import {
   CardSector, Cardtata12, Cardtata4,
   Cardtata6
-} from "src/styles/stylesGlobal";
+} from "~/styles/stylesGlobal";
 
 export default function Dashboard({ themerData, userData, pageData = null }) {
   const router = useRouter();
@@ -31,9 +31,33 @@ export default function Dashboard({ themerData, userData, pageData = null }) {
   return (
     <AppLayout userData={userData} themerData={themerData}>
       <CardSector>
-        <CardMaster viewSize="sizemd12">
-          <h2>Dashborad</h2>
-          <button onClick={logout}>Deslogar do sistema </button>
+        <CardMaster viewSize="sizemd04">
+          <CardMaxIcons>
+            <CardImg src="https://www.rocketseat.com.br/assets/icons/profile.svg" />
+            <CardTtile>1</CardTtile>
+          </CardMaxIcons>
+          <CardTexts>
+            <Cardparagraph>Visitantes</Cardparagraph>
+            <Cardparagraph>
+              <CadbtnlongV2 onClick={logout}>Deslogar do sistema </CadbtnlongV2>
+            </Cardparagraph>
+          </CardTexts>
+        </CardMaster>
+        <CardMaster viewSize="sizemd04">
+          <CardMaxIcons>
+            <CardImg src="https://www.rocketseat.com.br/assets/icons/profile.svg" />
+            <CardTtile>2</CardTtile>
+          </CardMaxIcons>
+          <CardTexts>
+            <Cardparagraph>
+              Você poderá filtrar com um time incrível
+            </Cardparagraph>
+            <Cardparagraph>
+              <Link href="/app/visitor">
+                <CadbtnlongV2>Buscar no sistema </CadbtnlongV2>
+              </Link>
+            </Cardparagraph>
+          </CardTexts>
         </CardMaster>
       </CardSector>
 
@@ -126,12 +150,12 @@ import { destroyCookie, parseCookies } from "nookies";
 
 export const getServerSideProps = async (ctx) => {
   try {
-    const { "3sda.profile": profile, theme: banana } = parseCookies(ctx);
+    const { "smc.profile": profile, theme: banana } = parseCookies(ctx);
 
     if (!profile) {
       return {
         redirect: {
-          destination: "/login",
+          destination: "/acesso",
           permanet: false,
         },
       };

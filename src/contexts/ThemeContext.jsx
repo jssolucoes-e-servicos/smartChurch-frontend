@@ -10,15 +10,16 @@ export const ThemeProvider = ({ children }) => {
     let actualTheme = cookies.theme;
     console.log("actual theme on cookies", actualTheme);
     if (actualTheme !== null) {
-      theme === "light" ? setDark() : setLigth();
+      theme === "light" ? setLigth() : setDark();
     }
   }
+
   useEffect(() => {
     themers();
   }, []);
 
   function changeTheme() {
-    theme === "light" ? setDark() : setLigth();
+    theme === "light" ? setLigth() : setDark();
   }
   const setDark = () => {
     setTheme("dark");

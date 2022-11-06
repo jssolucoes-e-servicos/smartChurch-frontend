@@ -1,0 +1,181 @@
+[
+    {
+        "title": "Dashboard",
+        "icon": "bi-question-circle-fill",
+        "path": "/"
+    },
+    {
+        "title": " Cadastros ",
+        "icon": "bi-gear-fill",
+        "childrens": [
+            {
+                "title": "Pessoas",
+                "icon": "bi-phone-fill",
+                "childrens": [
+                    {
+                        "title": "Membros",
+                        "icon": " <BsChevronRight />",
+                        "path": "/app/cadastros/membros"
+                    },
+                    {
+                        "title": "Visitantes",
+                        "icon": " <BsChevronRight />",
+                        "path": "/app/cadastros/visitantes"
+                    }
+                ]
+            },
+            {
+                "title": "Hierarquia Celular",
+                "icon": "bi-phone-fill",
+                "childrens": [
+                    {
+                        "title": "Redes",
+                        "icon": " <BsChevronRight />",
+                        "path": "/app/cadastros/redes"
+                    },
+                    {
+                        "title": "Celulas",
+                        "icon": " <BsChevronRight />",
+                        "path": "/app/cadastros/celulas"
+                    }
+                ]
+            },
+            {
+                "title": "Configuração",
+                "icon": "bi-phone-fill",
+                "childrens": [
+                    {
+                        "title": "Construção",
+                        "path": "/app/construct",
+                        "icon": "bi-instagram"
+                    },
+                    {
+                        "title": "Twitter",
+                        "icon": "bi-twitter"
+                    },
+                    {
+                        "title": "Instagram",
+                        "icon": "bi-instagram"
+                    },
+                    {
+                        "title": "facebook",
+                        "icon": "bi-facebook"
+                    }
+                ]
+            },
+            {
+                "title": "Inscritos",
+                "icon": "bi-question-circle-fill",
+                "path": "/app/inscrition"
+            }
+        ]
+    },
+    {
+        "title": "Minha Célula",
+        "icon": "bi-view-list",
+        "childrens": [
+            {
+                "title": "Relatorios",
+                "path": "/app/minha-celula/relatorios"
+            },
+            {
+                "title": "Pessoas",
+                "path": "/app/minha-celula/pessoas"
+            }
+        ]
+    },
+    {
+        "title": "Minha Rede",
+        "icon": "bi-view-list",
+        "childrens": [
+            {
+                "title": "Relatorios",
+                "path": "/app/minha-rede/relatorios"
+            },
+            {
+                "title": "Células",
+                "path": "/app/minha-rede/celulas"
+            },
+            {
+                "title": "Pessoas",
+                "path": "/app/minha-rede/pessoas"
+            }
+        ]
+    },
+    {
+        "title": "Recepção",
+        "icon": "bi-person-fill",
+        "childrens": [
+            {
+                "title": "Cadastros",
+                "childrens": [
+                    {
+                        "title": "Visitantes",
+                        "path": "/app/recepcao/cadastros/visitantes"
+                    },
+                    {
+                        "title": "Novos Convertidos",
+                        "path": "/app/recepcao/cadastros/novos-convertidos"
+                    },
+                    {
+                        "title": "Batizados",
+                        "path": "/app/recepcao/cadastros/batizados"
+                    },
+                    {
+                        "title": "Inventário",
+                        "childrens": [
+                            {
+                                "title": "Materiais de Escritório",
+                                "path": "/app/developer"
+                            },
+                            {
+                                "title": "Insumos",
+                                "path": "/settings/billing/subscription"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Notificações",
+                        "path": "/settings/notifications"
+                    }
+                ]
+            },
+            {
+                "title": "Logout",
+                "path": "/logout"
+            }
+        ]
+    },
+    {
+        "title": "Account",
+        "icon": "bi-info-circle-fill",
+        "childrens": [
+            {
+                "title": "Login",
+                "path": "/login"
+            },
+            {
+                "title": "Register",
+                "path": "/register"
+            },
+            {
+                "title": "Forgot Password",
+                "path": "/forgot-password"
+            },
+            {
+                "title": "Reset Password",
+                "path": "/reset-password"
+            }
+        ]
+    },
+    {
+        "title": "Support",
+        "icon": "bi-question-circle-fill",
+        "path": "/support"
+    },
+    {
+        "title": "Report Bug",
+        "icon": "bi-bug",
+        "path": "/report-bug"
+    }
+]

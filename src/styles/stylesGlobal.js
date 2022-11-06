@@ -53,11 +53,32 @@ export const Cadbtnlong = styled.button`
   padding: 10px;
   border-style: none;
   font-size: 15px;
+  :hover {
+    background: #ccc;
+  }
   @media (max-width: 1050px) {
     background-color: #ffc107;
   }
 `;
+export const CadbtnlongV2 = styled.button`
+  /* background-color: #4863f7; */
+  background-color: #333;
+  margin-right: 5px;
+  margin-right: 5px;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%), 0 0 2px rgb(0 0 0 / 10%);
+  border-radius: 2px;
+  padding: 10px;
+  border-style: none;
+  font-size: 12px;
 
+  transition: all 0.2s ease-in-out;
+  :hover {
+    background: #4863f7;
+  }
+  @media (max-width: 1050px) {
+    background-color: #ffc107;
+  }
+`;
 export const CardSector = styled.div`
   width: 100%;
   max-width: 100%;
@@ -69,8 +90,9 @@ export const CardSector = styled.div`
   margin-bottom: 10px;
   margin-top: 10px;
   padding: 10px 0 10px 0;
-  /* background-color: #ccc; */
-
+  /* box-shadow: 0 4px 20px rgb(0 0 0 / 10%), 0 0 2px rgb(0 0 0 / 10%); */
+  /* background: ${(props) => props.theme.CardRock}; */
+  /* padding: 24px; */
   @media (max-width: 1050px) {
     width: 100%;
     margin: 0;
@@ -240,5 +262,64 @@ export const ButtonGeral = styled.button`
   @media (max-width: 950px) {
     width: 100%;
     font-size: 10px;
+  }
+`;
+
+export const FilterName = styled.div`
+  width: 100%;
+  max-width: 85%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--bgSesseons);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20px;
+`;
+export const FilterIpt = styled.input`
+  width: 100%;
+  max-width: 50%;
+  height: 57px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bgSesseons);
+  box-shadow: rgb(132 25 81 / 20%) 0px 30px 50px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 9, 137);
+  color: rgb(255, 255, 255);
+  outline: 0px;
+  opacity: 1;
+  font-size: 15px;
+  :focus {
+    border: solid 1px #4863f7;
+    box-shadow: rgb(63 81 181 / 21%) 0px 30px 50px;
+  }
+`;
+export const SelectedFilter = styled.select`
+  width: 100%;
+  max-width: 30%;
+  height: 57px;
+
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bgSesseons);
+  box-shadow: rgb(132 25 81 / 20%) 0px 30px 50px;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 9, 137);
+  color: rgb(255, 255, 255);
+  outline: 0px;
+  opacity: 1;
+  font-size: 15px;
+  margin-left: 30px;
+  option {
+    background-color: #202024;
+    color: #ccc;
+  }
+  :focus {
+    border: solid 1px #4863f7;
+    box-shadow: rgb(63 81 181 / 21%) 0px 30px 50px;
   }
 `;

@@ -6,7 +6,7 @@ export const darkTheme = {
   BoxRock: "#1a1a1e",
   FormInp: "rgb(18, 18, 20)",
   borders: "rgb(18, 18, 20)",
-  BoxNav: "#9E9E9E",
+  BoxNav: "rgb(32 32 36)",
   BgBlog: `https://3sdigital.com.br/videovaltra/AstraImg/Bgblog.png`,
   bgdark: `linear-gradient(270deg,#09090a,#121214)`,
   bgCard: "#121214",
@@ -42,7 +42,6 @@ export const lightTheme = {
   bgdark: "#fff",
   bgCard: "#fdfdfd",
   overley: "#fff",
-
   fontgrenn: "var(--colorBordo)",
   carddark: "#fff",
   //antigo e deletar se precisar
