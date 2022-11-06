@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "src/styles/globals.css";
 import { ChurchProvider } from "~/contexts/churchContext";
 import { ToastContainer } from "react-toastify";

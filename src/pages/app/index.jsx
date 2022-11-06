@@ -11,6 +11,7 @@ import {
   CardSector, Cardtata12, Cardtata4,
   Cardtata6
 } from "~/styles/stylesGlobal";
+import Link from 'next/link';
 
 export default function Dashboard({ themerData, userData, pageData = null }) {
   const router = useRouter();
@@ -151,15 +152,15 @@ import { destroyCookie, parseCookies } from "nookies";
 export const getServerSideProps = async (ctx) => {
   try {
     const { "smc.profile": profile, theme: banana } = parseCookies(ctx);
-
-    if (!profile) {
-      return {
-        redirect: {
-          destination: "/acesso",
-          permanet: false,
-        },
-      };
-    }
+    /* 
+        if (!profile) {
+          return {
+            redirect: {
+              destination: "/acesso",
+              permanet: false,
+            },
+          };
+        } */
 
     const { data: pageSession } = await api.get("inscritos/lista");
     const { data: pagePost } = await api.get("postgeral/PostsGeral");
