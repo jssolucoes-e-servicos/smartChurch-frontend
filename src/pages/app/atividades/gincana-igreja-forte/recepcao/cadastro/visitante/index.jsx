@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useMemo } from "react";
 import { toast } from "react-toastify";
 import AppLayout from "~/templates/AppLayout";
 import api from "~/services/api";
-import ModalVisitors from "~/components/ModalVisitor";
+import ModalVisitors from "~/components/Modals/NewVisitor";
 import ChurchContext from "~/contexts/churchContext";
 import {
   CadBox,
@@ -10,7 +10,7 @@ import {
   FilterIpt,
   SelectedFilter,
   Cardtata4,
-} from "src/styles/stylesGlobal";
+} from "~/styles/stylesGlobal";
 import Tbsfer from "~/partials/TabBar";
 import CardMaster from "~/components/CardMaster";
 import { CardSector, CadbtnlongV2, CadBoxBtn } from "~/styles/stylesGlobal";

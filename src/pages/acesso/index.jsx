@@ -12,7 +12,7 @@ import {
   InputTxt, SpanTXT, TxtL, Txtseparation
 } from "~/styles/pages/logis";
 
-const acesso = () => {
+const Acesso = () => {
   const { register, handleSubmit } = useForm();
   const { setLoad } = useContext(ChurchContext);
 
@@ -102,7 +102,7 @@ const acesso = () => {
   );
 }
 
-export default acesso;
+export default Acesso;
 
 export const getServerSideProps = async (ctx) => {
   const { "3sda.profile": profile } = parseCookies(ctx);
