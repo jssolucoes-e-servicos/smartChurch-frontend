@@ -10,7 +10,8 @@ export function getAPIClient(ctx) {
     baseURL: ServerURI,
     headers: {
       "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+      "Content-Type": "application/json;charset=UTF-8",
     },
   });
 

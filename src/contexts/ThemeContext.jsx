@@ -8,7 +8,6 @@ export const ThemeProvider = ({ children }) => {
   function themers() {
     const cookies = parseCookies();
     let actualTheme = cookies.theme;
-    console.log("actual theme on cookies", actualTheme);
     if (actualTheme !== null) {
       theme === "light" ? setLigth() : setDark();
     }
@@ -24,14 +23,10 @@ export const ThemeProvider = ({ children }) => {
   const setDark = () => {
     setTheme("dark");
     setCookie(undefined, "theme", "dark");
-    //sessionStorage.setItem("app@theme", "dark");
-    console.info("theme changed to dark");
   };
   const setLigth = () => {
     setTheme("light");
     setCookie(undefined, "theme", "light");
-    //sessionStorage.setItem("app@theme", "light");
-    console.info("theme changed to light");
   };
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>

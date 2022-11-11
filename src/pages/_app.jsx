@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "src/styles/globals.css";
 import { ChurchProvider } from "~/contexts/churchContext";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
@@ -32,8 +32,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChurchProvider>
       <React.Fragment>
-        <ToastContainer />
+
         <Component {...pageProps} />
+
       </React.Fragment>
     </ChurchProvider>
   );

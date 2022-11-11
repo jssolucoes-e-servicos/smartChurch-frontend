@@ -1,53 +1,52 @@
 import Link from "next/link";
 import { useContext, useEffect } from "react";
-import { BiMenuAltLeft } from "react-icons/bi";
-import ThemeContext from "~/contexts/ThemeContext";
+import { BiMenu } from "react-icons/bi";
+import ChurchContext from "~/contexts/churchContext";
+/* import ThemeContext from "~/contexts/ThemeContext"; */
 import {
-  BtnSwit, ButtonMLeft, ContainerLogo, ContainerNav, ContainerPhotoUser, SectorLeft,
-  SectorRight, TxtHome
+  /* BtnSwit, */ ButtonMLeft, ContainerLogo, ContainerNav, ContainerPhotoUser, SectorLeft,
+  SectorRight, SectorImg
 } from "./styles";
+
 export default function NavBar({ userData }) {
-  const { theme, changeTheme } = useContext(ThemeContext);
-  console.log(theme);
-  var visibilidade = true;
-  function OcultarExibir() {
-    // Quando clicar no botão.
-    if (visibilidade) {
-      visibilidade = false; //alteramos o valor da variável para falso.
-      //Se a variável visibilidade for igual a true, então...
+  const { openAsside, changeOpenAsside } = useContext(ChurchContext);
+  /*   const { theme, changeTheme } = useContext(ThemeContext); */
+
+  function changeVisibilit() {
+
+    if (openAsside) {
       document.getElementById("navegMan").style =
         "width:0px ;transition: all 0.2s ease-in-out";
       document.querySelector("#SiderMan").style =
         "opacity:0;transition:all .2s ease";
-      //Ocultamos a div
     } else {
-      visibilidade = true; //Alteramos o valor da variável para true.
-      //ou se a variável estiver com o valor false..
-
-      //Exibimos a div..
       document.getElementById("navegMan").style =
         "width:250px ;transition: all 0.2s ease-in-out";
       document.querySelector("#SiderMan").style =
         "opacity:1;transition:all .2s ease";
     }
-    console.log(visibilidade);
   }
 
   useEffect(() => {
-    OcultarExibir();
-  }, []);
+    changeVisibilit();
+  }, [openAsside]);
+
   return (
     <ContainerNav>
       <SectorLeft>
-        <ButtonMLeft onClick={OcultarExibir}>
-          <BiMenuAltLeft id="IconMLeft" />
+        <ButtonMLeft onClick={changeOpenAsside}>
+          <BiMenu id="IconMLeft" />
         </ButtonMLeft>
         <Link href="/">
-          <TxtHome>Dashboard </TxtHome>
+          <SectorImg
+            src="/assets/img/logo.png"
+            width="100px"
+            heigth="50px"
+          />
         </Link>
       </SectorLeft>
       <SectorRight>
-        <BtnSwit>
+        {/* <BtnSwit>
           <input
             className="Ipt"
             id="switch"
@@ -59,14 +58,13 @@ export default function NavBar({ userData }) {
           <label className="labeDark" htmlFor="switch">
             Dark
           </label>
-        </BtnSwit>
+        </BtnSwit> */}
         <ContainerLogo>
           {userData.image != null && userData.image.trim().length > 20 ? (
             <ContainerPhotoUser src={userData.image} />
           ) : (
             <ContainerPhotoUser src="/assets/img/user/padraouser.jpg" />
           )}
-          {/* <ContainerPhotoUser src={userData.image} alt="Profile Photo" /> */}
         </ContainerLogo>
       </SectorRight>
     </ContainerNav>

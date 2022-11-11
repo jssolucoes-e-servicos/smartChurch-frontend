@@ -35,23 +35,6 @@ export const SectorMasterImg = styled.div`
   }
 `;
 
-export const SectorImg = styled.img`
-  position: relative;
-  top: 0px;
-  left: 0;
-  width: 70px;
-  height: 70px;
-
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 950px) {
-  }
-`;
-
 export const Sidebarcontaner = styled.div`
   position: fixed;
   padding-top: 10px;

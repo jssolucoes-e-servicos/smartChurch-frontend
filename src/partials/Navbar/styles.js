@@ -7,10 +7,8 @@ export const ContainerNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //background-color: #f5f5f5;
   background: ${(props) => props.theme.BoxNav};
   box-shadow: 0 1px 20px 0px rgb(0 0 0 / 20%);
-  //box-shadow: rgb(18 18 20) 0px 0.2rem 2rem;
   width: 100%;
   max-width: 100%;
   height: 70px;
@@ -39,9 +37,23 @@ export const SectorLeft = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 15px;
+  padding: 5px;
   @media (max-width: 950px) {
     max-width: 50px;
+  }
+`;
+
+export const SectorImg = styled.img`
+  position: relative;
+  top: 0px;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 950px) {
   }
 `;
 
@@ -67,9 +79,9 @@ export const ButtonMLeft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 0;
   color: ${(props) => props.theme.fontColor};
   font-size: 30px;
-  /* background-color: red; */
   padding-left: 0px;
   padding-right: 20px;
   cursor: pointer;

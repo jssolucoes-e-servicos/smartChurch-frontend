@@ -16,11 +16,11 @@ import {
   SectorBtn,
   BtnDataCloseBtn,
 } from "./styles";
-export default function ModalPostF({
+export default function ModalNewVisitor({
   desenv = null,
   id = "exemploInsert",
   postData = null,
-  onClose = () => {},
+  onClose = () => { },
 }) {
   const { register, setValue, handleSubmit } = useForm();
   const HandleOutsideClick = (e) => {
