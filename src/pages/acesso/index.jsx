@@ -19,18 +19,20 @@ const acesso = () => {
   const router = useRouter();
 
   const onSubmit = async (data) => {
+    console.clear();
     try {
-      const { data: apiData } = await api.post("usuario/login", {
+      const { data: apiData } = await api.post("auth/login", {
         email: data.email,
         password: data.password,
       });
-      setCookie(undefined, "smc.profile", JSON.stringify(apiData), {
+      setCookie(undefined, "profile", JSON.stringify(apiData.user), {
         maxAge: 60 * 60 * 1, //1 hour
       });
-      setCookie(undefined, "smc.tk", JSON.stringify(apiData.token), {
+      setCookie(undefined, "atk", JSON.stringify(apiData.access_token), {
         maxAge: 60 * 60 * 1, //1 hour
       });
-      router.push("/app");
+      console.log(apiData)
+      //router.push("/app");
     } catch (error) {
       console.error(error);
       toast.error(
@@ -61,7 +63,7 @@ const acesso = () => {
                   <InputTxt
                     type="text"
                     id="email"
-                    value="fernando@dev.com"
+                    placeholder="Seu e-mail"
                     {...register("email", {
                       required: "O Email é obrigatório",
                     })}
@@ -74,7 +76,7 @@ const acesso = () => {
                   <InputTxt
                     type="password"
                     id="password"
-                    value="password"
+                    placeholder="Sua senha"
                     {...register("password", {
                       required: "A senha é obrigatória",
                     })}
