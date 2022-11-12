@@ -62,6 +62,7 @@ export const Cadbtnlong = styled.button`
 `;
 export const CadbtnlongV2 = styled.button`
   /* background-color: #4863f7; */
+  min-heigth: 70;
   background-color: #333;
   margin-right: 5px;
   margin-right: 5px;

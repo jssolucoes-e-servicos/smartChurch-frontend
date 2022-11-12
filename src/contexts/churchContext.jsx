@@ -1,6 +1,6 @@
 import { Fragment, createContext, useState, useEffect } from "react";
 import { ThemeProvider } from "./ThemeContext";
-import { parseCookies, setCookie, destroyCookie } from 'nookies'
+import { parseCookies, setCookie } from 'nookies'
 import { ToastContainer, toast } from "react-toastify";
 
 const ChurchContext = createContext({});
@@ -11,15 +11,19 @@ export const ChurchProvider = ({ children }) => {
   const [load, setLoad] = useState(false);
   const [device, setDevice] = useState(null);
   const [openModal, setOpenModal] = useState(false);
-  const [openAsside, setOpenAsside] = useState(false);
+  const [openAsside, setOpenAsside] = useState(null);
 
   useEffect(() => {
-    let opAsside = cookies.smc_openAsside;
-    if (opAsside === undefined) {
-
-      changeOpenAsside()
+    if (openAsside === null) {
+      let opAsside = sessionStorage.getItem("openAsside");
+      if (opAsside === null) {
+        setOpenAsside(true);
+        sessionStorage.setItem("openAsside", true);
+      } else {
+        setOpenAsside(opAsside);
+        sessionStorage.setItem("openAsside", opAsside);
+      }
     }
-    setOpenAsside(Boolean(opAsside));
   }, []);
 
   const alert = (type, msg) => {
@@ -41,16 +45,10 @@ export const ChurchProvider = ({ children }) => {
   const changeOpenAsside = () => {
     if (openAsside === true) {
       setOpenAsside(false);
-      setCookie(null, 'smc_openAsside', false, {
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      })
+      sessionStorage.setItem("openAsside", false);
     } else {
       setOpenAsside(true);
-      setCookie(null, 'smc_openAsside', true, {
-        maxAge: 30 * 24 * 60 * 60,
-        path: '/',
-      })
+      sessionStorage.setItem("openAsside", true);
     }
   }
 

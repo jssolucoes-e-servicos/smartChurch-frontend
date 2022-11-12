@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { ServerURI } from "~/configs/server-config";
 
 export function getAPIClient(ctx) {
-  const { "smc.tk": token } = parseCookies(ctx);
+  const { atk: token } = parseCookies(ctx);
 
   const api = axios.create({
     baseURL: ServerURI,
@@ -28,7 +28,7 @@ export function getAPIClient(ctx) {
         toast.error("O tempo de sua seção expirou, faça login novamente.");
         return {
           redirect: {
-            destination: "/login",
+            destination: "/acesso",
             permanent: false,
           },
         };

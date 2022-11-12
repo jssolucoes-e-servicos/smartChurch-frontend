@@ -4,7 +4,7 @@ import { BiMenu } from "react-icons/bi";
 import ChurchContext from "~/contexts/churchContext";
 /* import ThemeContext from "~/contexts/ThemeContext"; */
 import {
-  /* BtnSwit, */ ButtonMLeft, ContainerLogo, ContainerNav, ContainerPhotoUser, SectorLeft,
+  ButtonMLeft, ContainerLogo, ContainerNav, ContainerPhotoUser, SectorLeft,
   SectorRight, SectorImg
 } from "./styles";
 
@@ -12,9 +12,13 @@ export default function NavBar({ userData }) {
   const { openAsside, changeOpenAsside } = useContext(ChurchContext);
   /*   const { theme, changeTheme } = useContext(ThemeContext); */
 
+  useEffect(() => {
+    changeVisibilit();
+  }, [openAsside]);
+
   function changeVisibilit() {
 
-    if (openAsside) {
+    if (openAsside === false) {
       document.getElementById("navegMan").style =
         "width:0px ;transition: all 0.2s ease-in-out";
       document.querySelector("#SiderMan").style =
@@ -26,10 +30,6 @@ export default function NavBar({ userData }) {
         "opacity:1;transition:all .2s ease";
     }
   }
-
-  useEffect(() => {
-    changeVisibilit();
-  }, [openAsside]);
 
   return (
     <ContainerNav>
@@ -46,25 +46,15 @@ export default function NavBar({ userData }) {
         </Link>
       </SectorLeft>
       <SectorRight>
-        {/* <BtnSwit>
-          <input
-            className="Ipt"
-            id="switch"
-            type="checkbox"
-            name="theme"
-            checked={theme === "light" ? true : false}
-            onClick={() => changeTheme()}
-          />
-          <label className="labeDark" htmlFor="switch">
-            Dark
-          </label>
-        </BtnSwit> */}
         <ContainerLogo>
-          {userData.image != null && userData.image.trim().length > 20 ? (
-            <ContainerPhotoUser src={userData.image} />
-          ) : (
-            <ContainerPhotoUser src="/assets/img/user/padraouser.jpg" />
-          )}
+          {userData !== null && (
+            userData.image !== null ? (
+              <ContainerPhotoUser src={userData.image} />
+            ) : (
+              <ContainerPhotoUser src="https://www.gravatar.com/avatar/dcf370cee719efa153ea40d72d755ed7" />
+            )
+          )
+          }
         </ContainerLogo>
       </SectorRight>
     </ContainerNav>

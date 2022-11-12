@@ -17,11 +17,24 @@ export const CardMax = styled.div`
       ? sizemd06
       : viewSize === "sizemd12"
       ? sizemd12
+      : viewSize === "sizemd02"
+      ? sizemd02
       : sizemd06};
   @media (max-width: 1050px) {
     margin-right: 0px;
   }
 `;
+
+const sizemd02 = css`
+  width: 100%;
+  width: 200px !important;
+  margin-right: 20px;
+  background: ${(props) => props.theme.CardRock};
+  :hover {
+    box-shadow: 0 0 0 2px #4863f7;
+  }
+`;
+
 const sizemd04 = css`
   width: 100%;
   width: 350px !important;
